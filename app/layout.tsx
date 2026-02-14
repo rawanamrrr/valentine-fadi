@@ -98,12 +98,6 @@ export default function RootLayout({
           type="video/mp4"
         />
 
-        <link
-          rel="preload"
-          href="/song.mp3"
-          as="audio"
-          type="audio/mpeg"
-        />
         {/* Preconnect to domains for faster loading */}
         <link rel="preconnect" href="https://maps.googleapis.com" />
         <link rel="preconnect" href="https://maps.gstatic.com" />

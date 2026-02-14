@@ -128,7 +128,7 @@ function ScratchCard({ brushRadius = 30, onClick }: ScratchCardProps) {
     }
 
     const progress = Math.min(clearedAreaRef.current / total, 1)
-    if (progress >= 0.3) {
+    if (progress >= 1) {
       onClick()
     }
   }
@@ -329,8 +329,9 @@ export default function Home() {
 
   return (
     <main className="min-h-screen w-full bg-[#fff9f9] relative overflow-hidden">
-      {/* Hidden audio for early buffering */}
+      {/* Preload audio for instant playback */}
       <audio src="/song.mp3" preload="auto" className="hidden" />
+      
       {/* Main Content */}
       {!isUnlocked ? (
         <div className="relative w-full h-screen">
