@@ -174,6 +174,8 @@ export default function Home() {
         return "/gift-desktop.jpg"
       case "/images1.jpg":
         return "/images1-desktop.jpg"
+      case "/images2.jpg":
+        return "/images2-desktop.jpg"
       case "/message.jpg":
         return "/message-desktop.jpg"
       case "/song1.jpg":
@@ -207,6 +209,7 @@ export default function Home() {
       "/lock.jpg",
       "/gift.jpg",
       "/images1.jpg",
+      "/images2.jpg",
       "/message.jpg",
       "/song1.jpg",
       "/song2.jpg",
@@ -535,6 +538,26 @@ export default function Home() {
                     alt="Images part 1"
                     className="w-full h-auto block"
                   />
+                  <img
+                    src={getResponsiveImage("/images2.jpg")}
+                    alt="Images part 2"
+                    className="w-full h-auto block"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const container = imagesScrollRef.current
+                      if (!container) return
+                      container.scrollTo({
+                        top: container.scrollHeight,
+                        behavior: "smooth",
+                      })
+                    }}
+                    className="absolute left-1/2 bottom-17 -translate-x-1/2 px-4 py-2 rounded-full bg-white/80 text-[#9b1412] text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase shadow-lg animate-bounce"
+                  >
+                    <span>SCROLL DOWN</span>
+                    <span className="text-lg leading-none">↓</span>
+                  </button>
                 </div>
               ) : selectedImage === "/song1.jpg" ? (
                 <div className="relative w-full h-full">
